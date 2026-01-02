@@ -1,0 +1,58 @@
+name: Task
+description: A product task with clear scope and acceptance criteria.
+labels:
+  - task
+
+body:
+  - type: markdown
+
+  - type: dropdown
+    id: documentation
+    attributes:
+      label: Documentation
+      options:
+        - Ready
+        - TBD
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Background / Context
+      description: Why is this needed? Include links to related issues, design docs, or decisions.
+    validations:
+      required: false
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: In Scope
+      description: Bullet list of what must be done.
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Blockers
+      description: Anything that blocks this task or must be completed first.
+      placeholder: |
+        - Blocked by:
+        - Depends on:
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+    validations:
+      required: false
