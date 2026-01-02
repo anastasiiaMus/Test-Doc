@@ -1,6 +1,5 @@
-name: Bug Report
+name: Bug
 description: Report a defect with clear steps, actual vs expected result, and evidence.
-title: 'Bulk update "<field>" sets "<field>" to <value> for <scope>'
 labels:
   - bug
 body:
