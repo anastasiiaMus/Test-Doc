@@ -4,8 +4,6 @@ labels:
   - task
 
 body:
-  - type: markdown
-
   - type: dropdown
     id: documentation
     attributes:
