@@ -1,0 +1,126 @@
+name: Bug Report
+description: Report a defect with clear steps, actual vs expected result, and evidence.
+title: 'Bulk update "<field>" sets "<field>" to <value> for <scope>'
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        Please fill out all required fields. Add screenshots/videos/logs in **Attachments**.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken and in what context? Mention where it happens and where it works (if applicable).
+      placeholder: |
+        The issue occurs only for bulk updates via the Right Side Bar...
+        When updating the same field individually, it works correctly...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Product area + environment + version/build.
+      placeholder: |
+        Env: Dev / QA / Prod
+        App/Module: Smart Table / BOM / Quote / Sales Order / etc.
+        Version/Release: (e.g., Orion Release Validation - 1.9)
+        Browser: Chrome 121 / Safari 17 (if applicable)
+        Account/Customer: (if applicable)
+    validations:
+      required: true
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Preconditions
+      description: What must be true before reproduction starts (role, data setup, imported file, feature flags, etc.).
+      placeholder: |
+        - Role: Sales Admin / Sales Support / Administrator
+        - Record: Quote created
+        - Data: Imported S1_COMSimpleSIF.sif
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide numbered, minimal steps so anyone can reproduce.
+      placeholder: |
+        1. Open the Quote and navigate to Orion Smart Table
+        2. Select 1st and 2nd rows in the BOM table
+        3. Expand the Right Side Bar (Bulk Edit panel)
+        4. In List Price, set the same value for both rows (e.g., $100.00)
+        5. Click Submit
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Result
+      description: What happened (include exact values, errors, or screenshots if possible).
+      placeholder: |
+        Ext List Price for the updated rows becomes $0.00.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+      description: What should have happened (include formula/logic if relevant).
+      placeholder: |
+        Selected rows should be updated correctly:
+        - Row 1: Ext List Price = $400.00 (depends on qty)
+        - Row 2: Ext List Price = $1200.00 (depends on qty)
+        Ext List Price should be calculated as:
+        Ext List Price = List Price × Quantity
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: How often does it happen?
+      options:
+        - Always
+        - Often
+        - Sometimes
+        - Rarely
+        - Unable to reproduce
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: Business/operational impact of the bug.
+      options:
+        - Critical (blocks core workflow / incorrect financials)
+        - High (major workflow impact / no workaround)
+        - Medium (workaround exists)
+        - Low (minor issue / cosmetic)
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Attachments
+      description: Drag & drop files here after creating the issue (video, screenshots, logs). Also paste links if needed.
+      placeholder: |
+        - Video:
+        - Screenshots:
+        - Logs:
+        - Record link / ID:
+    validations:
+      required: false
