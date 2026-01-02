@@ -1,4 +1,4 @@
-name: Task
+name: Task/Epic
 description: A product task with clear scope and acceptance criteria.
 labels:
   - task
