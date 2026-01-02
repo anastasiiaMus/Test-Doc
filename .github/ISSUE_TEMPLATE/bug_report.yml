@@ -24,7 +24,7 @@ body:
     attributes:
       label: Preconditions
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: steps
@@ -62,7 +62,7 @@ body:
         - Rarely
         - Unable to define
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: impact
