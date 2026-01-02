@@ -2,6 +2,7 @@ name: Bug
 description: Report a defect with clear steps, actual vs expected result, and evidence.
 labels:
   - bug
+
 body:
   - type: textarea
     id: summary
